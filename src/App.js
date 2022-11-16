@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./Components/Home";
+import Verify from "./Components/Verify";
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "./Components/LandingPage";
+import Register from "./Components/Register";
+import Thankyou from "./Components/Thankyou";
+import Login from "./Components/Login";
+import Contact from "./Components/Contact";
+import Product from "./Components/Product";
+import Photos from "./Components/Photos";
+import PrivateRote from "./Components/PrivateRote";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <LandingPage />
+      <Routes>
+        <Route element={<PrivateRote />}>
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Product" element={<Product />} />
+          <Route path="/Photos" element={<Photos />} />
+          <Route path="/Verify" element={<Verify />} />
+        </Route>
+        
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Thankyou" element={<Thankyou />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
