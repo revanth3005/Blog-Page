@@ -17,6 +17,7 @@ const Login = () => {
     .then((response)=>{
         console.log(response);
         localStorage.token=response.data.data.token
+        localStorage.log=true
         navigate("/Home");
     })
     .catch((error)=>{

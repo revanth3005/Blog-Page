@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { NavLink } from "react-router-dom";
 
 const LandingPage = () => {
-
-  const clickLogout = () =>{
-    localStorage.removeItem('token')
-  }  
-
-
+  const clickLogout = () => {
+    localStorage.removeItem("token");
+  };
   return (
     <div>
       <div className="container">
@@ -28,7 +25,7 @@ const LandingPage = () => {
                       <NavLink
                         className="nav-link active"
                         aria-current="page"
-                        to={'/Home'}
+                        to={"/Home"}
                       >
                         Home
                       </NavLink>
@@ -37,13 +34,14 @@ const LandingPage = () => {
                       <NavLink
                         className="nav-link active"
                         aria-current="page"
-                        to={'/Contact'}
+                        to={"/Contact"}
                       >
                         Contact
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink to={'/Product'}
+                      <NavLink
+                        to={"/Product"}
                         className="nav-link active"
                         aria-current="page"
                       >
@@ -54,7 +52,7 @@ const LandingPage = () => {
                       <NavLink
                         className="nav-link active"
                         aria-current="page"
-                        to={'/Photos'}
+                        to={"/Photos"}
                       >
                         photos
                       </NavLink>
@@ -73,15 +71,15 @@ const LandingPage = () => {
                       Login
                     </button>
                   </NavLink>
-                  <NavLink to={"/Login"}>
-                    <button
-                      className="btn btn-outline-success"
-                      style={{ marginLeft: "20px" }}
-                      onClick={clickLogout}
-                    >
-                      logout
-                    </button>
-                  </NavLink>
+                    <NavLink to={""}>
+                      <button
+                        className="btn btn-outline-success"
+                        style={{ marginLeft: "20px" }}
+                        onClick={clickLogout}
+                      >
+                        logout
+                      </button>
+                    </NavLink>
                 </div>
               </div>
             </nav>
